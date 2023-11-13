@@ -21,8 +21,7 @@ const db = knex({
 import handleRegister from './controllers/register.js';
 import handleSignin from './controllers/signin.js';
 import handleProfileGet from './controllers/profile.js';
-import handleImage from './controllers/image.js';
-import handleAPICall from './controllers/image.js';
+import { handleImage, handleAPICall } from './controllers/image.js';
 
 const app = express();
 
