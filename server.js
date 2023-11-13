@@ -1,8 +1,9 @@
-const express = require('express');
-const bcrypt = require('bcrypt');
+import express from 'express';
+import bcrypt from 'bcrypt';
 const saltRounds = 10;
-const cors = require('cors');
-const knex = require('knex');
+import cors from 'cors';
+import knex from 'knex';
+
 // these setting are not secure but for just my personal project
 const db = knex({
     client: 'pg',
