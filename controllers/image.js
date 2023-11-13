@@ -4,7 +4,6 @@ import fetch from 'node-fetch';
 const MODEL_ID = 'face-detection';
 const returnClarifaiRequestOptions = (imageUrl) => {
     const PAT = '88254f0f7d294dd584f5edcb37d3373b';
-    // Your PAT (Personal Access Token) can be found in the portal under Authentification
     const USER_ID = 'kyle-hek';       
     const APP_ID = 'smart-brain';  
     const IMAGE_URL = imageUrl;
