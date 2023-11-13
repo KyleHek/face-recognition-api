@@ -5,6 +5,7 @@ const MODEL_ID = 'face-detection';
 
 const returnClarifaiRequestOptions = (imageUrl) => {
     const PAT = process.env.API_CLARIFAI;
+    console.log('API_CLARIFAI:', process.env.API_CLARIFAI);
     console.log('API_CLARIFAI:', PAT);
     // Your PAT (Personal Access Token) can be found in the portal under Authentification
     const USER_ID = 'kyle-hek';       
