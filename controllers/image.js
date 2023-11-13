@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 // Change these to whatever model you want to use
 const MODEL_ID = 'face-detection';
-const PAT = process.env.API_CLARIFAI;
+const PAT = API_CLARIFAI;
 
 const returnClarifaiRequestOptions = (imageUrl) => {
     console.log('API_CLARIFAI:', PAT);
