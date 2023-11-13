@@ -5,13 +5,10 @@ const MODEL_ID = 'face-detection';
 const returnClarifaiRequestOptions = (imageUrl) => {
   // Your PAT (Personal Access Token) can be found in the portal under Authentification
 const PAT = process.env.API_CLARIFAI;
-// Specify the correct user_id/app_id pairings
-// Since you're making inferences outside your app's scope
 const USER_ID = 'kyle-hek';       
 const APP_ID = 'smart-brain';  
 const IMAGE_URL = imageUrl;
 
-//setting up json that will be sent to clarifai
 const raw = JSON.stringify({
   "user_app_id": {
       "user_id": USER_ID,
@@ -41,9 +38,9 @@ return requestOptions;
 }
 
 const handleAPICall = (req, res) => {
+    const requestOptions = returnClarifaiRequestOptions(req.body.input);
     fetch(
-        "https://api.clarifai.com/v2/models/" + MODEL_ID + "/outputs", 
-        returnClarifaiRequestOptions(req.body.input)
+        "https://api.clarifai.com/v2/models/" + MODEL_ID + "/outputs", requestOptions
     )
     .then((response) => response.text())
     .then(result => {
