@@ -42,11 +42,18 @@ const handleAPICall = (req, res) => {
     fetch(
         "https://api.clarifai.com/v2/models/" + MODEL_ID + "/outputs", requestOptions
     )
-    .then((response) => response.text())
+    .then((response) => {
+        console.log("Clarifai API Response Status:", response.status);
+        return response.text();
+    })
     .then(result => {
+        console.log("Clarifai API Result:", result);
         res.json(result);
     })
-    .catch(err => res.status(500).json('Unable to communicate with API'));
+    .catch(err => {
+        console.error("Error communicating with Clarifai API:", err);
+        res.status(500).json('Unable to communicate with API');
+    });
 }
 
 const handleImage = (req, res, db) => {
