@@ -2,9 +2,9 @@ import fetch from 'node-fetch';
 
 // Change these to whatever model you want to use
 const MODEL_ID = 'face-detection';
-const PAT = API_CLARIFAI;
 
 const returnClarifaiRequestOptions = (imageUrl) => {
+    const PAT = process.env.API_CLARIFAI;
     console.log('API_CLARIFAI:', PAT);
     // Your PAT (Personal Access Token) can be found in the portal under Authentification
     const USER_ID = 'kyle-hek';       
