@@ -3,23 +3,26 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const cors = require('cors');
 const knex = require('knex');
-
-const register = require('./controllers/register');
-const signin = require('./controllers/signin');
-const profile = require('./controllers/profile');
-const image = require('./controllers/image');
-
 // these setting are not secure but for just my personal project
 const db = knex({
     client: 'pg',
     //where are database will be on a hosted platform
     connection: {
         connectionString : process.env.DATABASE_URL,
-        ssl: {
-          rejectUnauthorized: false
-        }   
+        ssl: { rejectUnauthorized: false },  
+        host: DATABASE_HOST,
+        port: 5432,
+        user: DATABASE_USER,
+        password: DATABASE_PW,
+        database: DATABASE_DB 
     }
 });
+
+import handleRegister from './controllers/register';
+import handleSignin from './controllers/signin';
+import handleProfileGet from './controllers/profile';
+import handleImage from './controllers/image';
+import handleAPICall from './controllers/image';
 
 const app = express();
 
@@ -31,23 +34,23 @@ app.get('/', (req, res) => {
 })
 
 app.post('/signin', (req, res) => {
-    signin.handleSignin(req, res, db, bcrypt)
+    handleSignin(req, res, db, bcrypt)
 })
 
 app.post('/register', (req, res) => { 
-    register.handleRegister(req, res, db, bcrypt, saltRounds) 
+    handleRegister(req, res, db, bcrypt, saltRounds) 
 });
 
 app.get('/profile/:id', (req, res) => {
-    profile.handleProfileGet(req, res, db)
+    handleProfileGet(req, res, db)
 })
 
 app.put('/image', (req, res) => {
-    image.handleImage(req, res, db)
+    handleImage(req, res, db)
 })
 
 app.post('/imageurl', (req, res) => { 
-    image.handleAPICall(req, res)
+    handleAPICall(req, res)
 })
 
 const PORT = process.env.PORT;

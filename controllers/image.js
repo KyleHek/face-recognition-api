@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 // Change these to whatever model you want to use
 const MODEL_ID = 'face-detection';
 const returnClarifaiRequestOptions = (imageUrl) => {
@@ -64,4 +66,9 @@ const handleImage = (req, res, db) => {
 module.exports = {
     handleImage: handleImage,
     handleAPICall: handleAPICall
+}
+
+export {
+    handleImage,
+    handleAPICall
 }
