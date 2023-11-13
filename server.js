@@ -9,15 +9,15 @@ const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
+// these setting are not secure but for just my personal project
 const db = knex({
     client: 'pg',
     //where are database will be on a hosted platform
     connection: {
-      host : '127.0.0.1',
-      port : 5432,
-      user : 'Kyle',
-      password : '',
-      database : 'face-recognition-db'
+        connectionString : process.env.DATABASE_URL,
+        ssl: {
+          rejectUnauthorized: false
+        }   
     }
 });
 

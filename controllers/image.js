@@ -2,7 +2,7 @@
 const MODEL_ID = 'face-detection';
 const returnClarifaiRequestOptions = (imageUrl) => {
   // Your PAT (Personal Access Token) can be found in the portal under Authentification
-const PAT = '88254f0f7d294dd584f5edcb37d3373b';
+const PAT = API_CLARIFAI;
 // Specify the correct user_id/app_id pairings
 // Since you're making inferences outside your app's scope
 const USER_ID = 'kyle-hek';       
