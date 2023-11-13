@@ -18,11 +18,11 @@ const db = knex({
     }
 });
 
-import handleRegister from './controllers/register';
-import handleSignin from './controllers/signin';
-import handleProfileGet from './controllers/profile';
-import handleImage from './controllers/image';
-import handleAPICall from './controllers/image';
+import handleRegister from './controllers/register.js';
+import handleSignin from './controllers/signin.js';
+import handleProfileGet from './controllers/profile.js';
+import handleImage from './controllers/image.js';
+import handleAPICall from './controllers/image.js';
 
 const app = express();
 
