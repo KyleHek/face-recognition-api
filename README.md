@@ -21,4 +21,4 @@
 
 For further information about the Front End look at [face-recognition](https://github.com/KyleHek/face-recognition).	
 
-Look at [Working demo](https://smart-raptor.herokuapp.com/](https://face-recognition-dsag.onrender.com) deployed at [Render](https://www.render.com).
+Look at [Working Demo]([https://www.render.com](https://face-recognition-dsag.onrender.com))deployed at [Render](https://www.render.com).
